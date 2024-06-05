@@ -14,7 +14,8 @@ const TaskInput = () => {
   const handleSubmit = (e) => {
     e.preventDefault(); // prevents the page reloading on the form being submitted
 
-    if (value.trim()) {  // to disallow submitting empty tasks
+    if (value.trim()) {
+      // to disallow submitting empty tasks
       dispatch(addTask(value)); // dispatches the addTask action with the input value
       // console.log(value);
       setValue(""); // clears the input field after submitting
@@ -26,17 +27,20 @@ const TaskInput = () => {
       {" "}
       <form
         onSubmit={handleSubmit}
-        className="space-x-4 w-full flex justify-center items-center"
+        className="space-y-2 space-x-0 md:space-x-4 md:space-y-0 w-full flex justify-center items-center flex-col md:flex-row "
       >
         <input
           type="text"
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          className="rounded-md bg-[#1F1B24] py-2 pl-2 placeholder:text-neutral-600 outline-none border border-neutral-600 text-white w-3/5"
+          className="rounded-md bg-[#1F1B24] py-2 pl-2 placeholder:text-neutral-600 outline-none border border-neutral-600 text-white md:w-3/5 w-full"
           placeholder="Buy groceries"
           ref={inputRef}
         />
-        <button type="submit" className="bg-sky-400 py-2 px-4 rounded-md w-1/4">
+        <button
+          type="submit"
+          className="bg-sky-400 py-2 px-4 rounded-md md:w-1/4 w-full"
+        >
           Add Task
         </button>
       </form>

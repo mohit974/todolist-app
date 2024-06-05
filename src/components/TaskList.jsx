@@ -32,7 +32,7 @@ const TaskList = () => {
         {tasks.map((task) => (
           <div
             key={task.id}
-            className="flex justify-between items-center mb-3 rounded-md py-2 px-1 bg-[#1F1B24] border-neutral-600 border"
+            className="flex justify-between items-center flex-row mb-3 rounded-md py-2 px-1 bg-[#1F1B24] border-neutral-600 border"
           >
             <div className="w-3/5">
               {editing === task.id ? (
@@ -59,7 +59,7 @@ const TaskList = () => {
               {editing === task.id ? (
                 <button
                   onClick={() => handleEditSubmit(task.id)}
-                  className="bg-sky-400 py-2 px-4 rounded-md"
+                  className="bg-sky-400 md:py-2 md:px-4 py-2 px-2 rounded-md"
                 >
                   Update Task
                 </button>
