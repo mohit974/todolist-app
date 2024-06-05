@@ -3,21 +3,21 @@ import { useDispatch } from "react-redux";
 import { addTask } from "../reducers/taskSlice";
 
 const TaskInput = () => {
-  const [value, setValue] = useState("");
-  const inputRef = useRef(null);
-  const dispatch = useDispatch();
+  const [value, setValue] = useState(""); // State to manage the input value
+  const inputRef = useRef(null); // Ref to access the input element
+  const dispatch = useDispatch(); // initializes the dispatch hook from Redux
 
   useEffect(() => {
-    inputRef.current.focus();
+    inputRef.current.focus(); // focus the input field when the component mounts
   }, []);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // prevents the page reloading on the form being submitted
 
-    if (value.trim()) {
-      dispatch(addTask(value));
-      console.log(value);
-      setValue("");
+    if (value.trim()) {  // to disallow submitting empty tasks
+      dispatch(addTask(value)); // dispatches the addTask action with the input value
+      // console.log(value);
+      setValue(""); // clears the input field after submitting
     }
   };
 

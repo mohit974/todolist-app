@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteTask, editTask, toggleTask } from "../reducers/taskSlice";
 
 const TaskList = () => {
-  const tasks = useSelector((state) => state.tasks);
-  const dispatch = useDispatch();
-  const [editing, setEditing] = useState(null);
-  const [editText, setEditText] = useState("");
+  const tasks = useSelector((state) => state.tasks); // gets the tasks array from the Redux store
+  const dispatch = useDispatch(); // initializes the dispatch hook from Redux
+  const [editing, setEditing] = useState(null); // State to manage which task is currently being edited
+  const [editText, setEditText] = useState(""); // State to manage the text input value for editing
 
   const handleEdit = (task) => {
     setEditing(task.id);
@@ -14,9 +14,9 @@ const TaskList = () => {
   };
 
   const handleEditSubmit = (id) => {
-    dispatch(editTask({ id, text: editText }));
-    setEditing(null);
-    setEditText("");
+    dispatch(editTask({ id, text: editText })); // dispatches the editTask action with the updated text
+    setEditing(null); // resets the editing state
+    setEditText(""); // clears the edit text input
   };
 
   return (

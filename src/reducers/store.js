@@ -3,6 +3,6 @@ import tasks from "./taskSlice";
 
 export default configureStore({
   reducer: {
-    tasks: tasks,
+    tasks: tasks, // Set the tasks reducer under the "tasks" property(key)
   },
 });

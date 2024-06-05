@@ -7,7 +7,7 @@ import store from "./reducers/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
+  <Provider store={store}>  {/* provides redux store to the whole application*/}
     <React.StrictMode>
       <App />
     </React.StrictMode>
